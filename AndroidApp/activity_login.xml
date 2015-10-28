@@ -6,19 +6,11 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:text="@string/sign_up"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp">
-    </Button>
-
     <EditText android:id="@+id/editText"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:inputType="textPersonName"
-        android:text="@string/edit_message"
+        android:hint="Enter a name"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp">
     </EditText>
@@ -26,8 +18,17 @@
     <Button
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="@string/log_in"
+        android:text="Login"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp">
     </Button>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="New User"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp">
+    </Button>
+
 </LinearLayout>
