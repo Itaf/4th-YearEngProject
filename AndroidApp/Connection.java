@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class Connection extends AppCompatActivity
 {
     private Button button;
-    private static final int REQUEST_ENABLE_BT = 0;
+    private static final int REQUEST_ENABLE_BT = 1;
     private BluetoothAdapter mBluetoothAdapter;
     private boolean connected = false;
 
