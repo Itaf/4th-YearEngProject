@@ -6,5 +6,7 @@
     <string name="title_activity_monitoring">Monitoring</string>
     <string name="ble_not_supported">Sorry, this device does not support BLE!</string>
     <string name="title_activity_connection">Connection</string>
+    <string name="title_activity_device_scan">DeviceScanActivity</string>
+    <string name="Unknown">Unknown Device</string>
 </resources>
 
