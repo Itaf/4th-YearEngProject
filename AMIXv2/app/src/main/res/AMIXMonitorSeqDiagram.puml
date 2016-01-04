@@ -1,0 +1,26 @@
+@startuml
+actor AppUser
+
+AppUser -> Monitoring: Start Monitoring
+activate Monitoring
+Monitoring -> Monitoring: Monitor PPG and GSR
+activate Monitoring
+Monitoring -> BLEService: TX Message: "Start"
+
+loop until Stop
+activate BLEService
+Monitoring <-- BLEService: RX Message: "PPG - GSR"
+Monitoring <-- Monitoring: Plot PPG and GSR
+alt irregular heart rate
+AppUser <- Monitoring: Notification
+else
+end
+AppUser -> Monitoring: Stop Monitoring
+Monitoring -> BLEService: TX Message: "Stop"
+destroy BLEService
+deactivate Monitoring
+end
+
+AppUser <-- Monitoring: Monitoring Response
+deactivate Monitoring
+@enduml
