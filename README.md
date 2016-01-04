@@ -1,18 +1,18 @@
-# 4th-YearEngProject
+# Fourth-Year Engineering Project
 
-### Monitoring of Arduino-based PPG and GSR Signals through an Android Device
+#### Monitoring of Arduino-based PPG and GSR Signals through an Android Device
 
 
 The following is a fourth-year engineering project at Carleton University, for the study period 2015 – 2016...
 
 
-#### Abstract
+##### Abstract
 
   The purpose of this project is to provide reliable heart rate readings, and to monitor the influence of stress on the heart rate. The group developed a system that monitors and processes PhotoPlethysmoGraphic (PPG) and Galvanic Skin Response (GSR) signals. A pulse/PPG sensor is used to estimate a person’s heart rate, and a GSR sensor is used to detect the person’s skin conductance. The Arduino microcontroller processes the estimated heart rate and detected skin conductance to obtain both PPG and GSR waveforms. The Arduino microcontroller is paired with an Android device via a Bluetooth Low Energy (BLE) wireless connection, to monitor the signals received from the Arduino microcontroller. Such a system could be used in hospitals, for bedside care, or by athletes, students, and so on.
 
 
 
-#### Background
+##### Background
 
   Medical and engineering worlds are highly related nowadays. Most of the technologies used in hospitals are established by engineers. Despite the large number of existing technologies, estimating reliable heart rate readings has always been an issue in the medical world. There are many technologies that have been developed to estimate heart rate, but they are not very reliable and rather expensive. Nonetheless, there are many factors that could affect someone’s heart rate such as motion, emotions, stress, and so on. Such technologies introduced problems related to reliability, complexity, flexibility, mobility, portability, power consumption, and costs.
   
@@ -22,7 +22,7 @@ The following is a fourth-year engineering project at Carleton University, for t
   
   
   
-#### Description
+##### Description
 
   A PPG sensor and a GSR sensor are interfacing with the 3.3/5V Arduino microcontroller to acquire the required signals. The GSR sensor is used for detecting the stress level, while the PPG sensor is used for estimating the heart rate. An Android application is developed to monitor the PPG and the GSR signals. The Arduino microcontroller interacts with the Android device through a wireless serial BLE connection. Standard algorithms for deriving heart rate from PPG signals and for deriving stress levels from GSR signals are available. These algorithms are adapted to the signals acquired using the Arduino microcontroller, and converted into the Android application.
 
