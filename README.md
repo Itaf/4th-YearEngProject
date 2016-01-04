@@ -1,1 +1,4 @@
 # 4th-YearEngProject
+Abstract: 
+
+  The purpose of this project is to provide reliable heart rate readings, and to monitor the influence of stress on the heart rate. The group developed a system that monitors and processes PhotoPlethysmoGraphic (PPG) and Galvanic Skin Response (GSR) signals. A pulse/PPG sensor is used to estimate a person’s heart rate, and a GSR sensor is used to detect the person’s skin conductance. The Arduino microcontroller processes the estimated heart rate and detected skin conductance to obtain both PPG and GSR waveforms. The Arduino microcontroller is paired with an Android device via a Bluetooth Low Energy (BLE) wireless connection, to monitor the signals received from the Arduino microcontroller. Such a system could be used in hospitals, for bedside care, or by athletes, students, and so on.
