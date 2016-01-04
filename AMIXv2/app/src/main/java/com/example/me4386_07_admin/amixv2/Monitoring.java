@@ -2,7 +2,7 @@ package com.example.me4386_07_admin.amixv2;
 
 import java.io.UnsupportedEncodingException;
 
-import com.example.me4386_07_admin.amixv2.UartServices;
+import com.example.me4386_07_admin.amixv2.BLEService;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
@@ -60,7 +60,7 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
 
     private RadioGroup mRg;
     private int mState = UART_PROFILE_DISCONNECTED;
-    private UartServices mService = null;
+    private BLEService mService = null;
     private BluetoothDevice mDevice = null;
     private BluetoothAdapter mBtAdapter = null;
     private ArrayAdapter<String> listAdapter;
@@ -168,7 +168,7 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
     {
         public void onServiceConnected(ComponentName className, IBinder rawBinder)
         {
-            mService = ((UartServices.LocalBinder) rawBinder).getService();
+            mService = ((BLEService.LocalBinder) rawBinder).getService();
             Log.d(TAG, "onServiceConnected mService= " + mService);
 
             if (!mService.initialize())
@@ -201,7 +201,7 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
 
             final Intent mIntent = intent;
 
-            if (action.equals(UartServices.ACTION_GATT_CONNECTED))
+            if (action.equals(BLEService.ACTION_GATT_CONNECTED))
             {
                 runOnUiThread(new Runnable() {
                     public void run()
@@ -222,7 +222,7 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
                 });
             }
 
-            if (action.equals(UartServices.ACTION_GATT_DISCONNECTED))
+            if (action.equals(BLEService.ACTION_GATT_DISCONNECTED))
             {
                 runOnUiThread(new Runnable() {
                     public void run()
@@ -244,16 +244,16 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
                 });
             }
 
-            if (action.equals(UartServices.ACTION_GATT_SERVICES_DISCOVERED))
+            if (action.equals(BLEService.ACTION_GATT_SERVICES_DISCOVERED))
             {
                 mService.enableTXNotification();
             }
 
-            if (action.equals(UartServices.ACTION_DATA_AVAILABLE))
+            if (action.equals(BLEService.ACTION_DATA_AVAILABLE))
             {
                 if(btnStart.getText().equals("Stop"))
                 {
-                    final byte[] txValue = intent.getByteArrayExtra(UartServices.EXTRA_DATA);
+                    final byte[] txValue = intent.getByteArrayExtra(BLEService.EXTRA_DATA);
 
                     runOnUiThread(new Runnable() {
                         public void run()
@@ -309,7 +309,7 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
                 }
             }
 
-            if (action.equals(UartServices.DEVICE_DOES_NOT_SUPPORT_UART))
+            if (action.equals(BLEService.DEVICE_DOES_NOT_SUPPORT_UART))
             {
                 showMessage("UART is not supported ... Disconnecting");
                 mService.disconnect();
@@ -320,7 +320,7 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
     private void service_init()
     {
         final Context context = Monitoring.this;
-        Intent bindIntent = new Intent(context, UartServices.class);
+        Intent bindIntent = new Intent(context, BLEService.class);
         bindService(bindIntent, mServiceConnection, Context.BIND_AUTO_CREATE);
 
         LocalBroadcastManager.getInstance(context).registerReceiver(UARTStatusChangeReceiver, makeGattUpdateIntentFilter());
@@ -329,11 +329,11 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
     private static IntentFilter makeGattUpdateIntentFilter()
     {
         final IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(UartServices.ACTION_GATT_CONNECTED);
-        intentFilter.addAction(UartServices.ACTION_GATT_DISCONNECTED);
-        intentFilter.addAction(UartServices.ACTION_GATT_SERVICES_DISCOVERED);
-        intentFilter.addAction(UartServices.ACTION_DATA_AVAILABLE);
-        intentFilter.addAction(UartServices.DEVICE_DOES_NOT_SUPPORT_UART);
+        intentFilter.addAction(BLEService.ACTION_GATT_CONNECTED);
+        intentFilter.addAction(BLEService.ACTION_GATT_DISCONNECTED);
+        intentFilter.addAction(BLEService.ACTION_GATT_SERVICES_DISCOVERED);
+        intentFilter.addAction(BLEService.ACTION_DATA_AVAILABLE);
+        intentFilter.addAction(BLEService.DEVICE_DOES_NOT_SUPPORT_UART);
         return intentFilter;
     }
 
@@ -578,7 +578,7 @@ public class Monitoring extends AppCompatActivity implements RadioGroup.OnChecke
                     {
                         //Connect button pressed, open DeviceListActivity class,
                         // with popup windows that scan for devices...
-                        Intent newIntent = new Intent(context, DeviceListActivity.class);
+                        Intent newIntent = new Intent(context, ScanActivity.class);
                         startActivityForResult(newIntent, REQUEST_SELECT_DEVICE);
                     }
                     else
