@@ -22,7 +22,9 @@ The following is a fourth-year engineering project at Carleton University, for t
  
 ##### Solution
  
-  Recent studies have shown that changes in the levels of biological stress influence the heart rate [4]. In fact, the pumping process of the heart and in turn the blood flow throughout the body may be affected by changes in physiological stress [4]. One way to measure the heart rate of a person is through analyzing a PPG signal. PPG is a procedure that determines the change in blood volume pulse (usually in the soft tissues of the body) using the direct relationship between variations in volume and the absorption, reflection, and scattering of the light from a photo-emitter and then recorded by the photo-receptor [4]. The changes in the pulsatile flow of the arterial blood are then represented in a PPG waveform, which can then be used to extract useful information such as a person’s heart rate. The modern way of estimating physiological stress is through the changes in skin conductance. GSR is a technique used to measure the changes in the skin conductance, usually to indicate an estimate of the level of biological stress [5]. Both PPG and GSR sensors can be used to indicate how stress affects the heart rate by a simultaneous analysis of their corresponding waveforms. With regards to our proposed solution, a PPG sensor and a GSR sensor are interfacing with a 3.3/5 volts Arduino microcontroller to acquire the required signals. The GSR sensor is used for detecting the stress level, while the PPG sensor is used for estimating the heart rate. An Android (4.3+) application is developed to monitor the PPG and the GSR signals. The Arduino microcontroller interacts with the Android device through a wireless serial BLE connection. Standard algorithms for deriving parameters from PPG and GSR signals are available [6], [7]. These algorithms are adapted to the acquired signals, and converted into the Android application. The derived parameters can be used to help in finding a correlation between PPG and GSR signals. Appendix A at the end of this report contains details about the used algorithms.
+  Recent studies have shown that changes in the levels of biological stress influence the heart rate [4]. In fact, the pumping process of the heart and in turn the blood flow throughout the body may be affected by changes in physiological stress [4]. One way to measure the heart rate of a person is through analyzing a PPG signal. PPG is a procedure that determines the change in blood volume pulse (usually in the soft tissues of the body) using the direct relationship between variations in volume and the absorption, reflection, and scattering of the light from a photo-emitter and then recorded by the photo-receptor [4]. The changes in the pulsatile flow of the arterial blood are then represented in a PPG waveform, which can then be used to extract useful information such as a person’s heart rate. The modern way of estimating physiological stress is through the changes in skin conductance. GSR is a technique used to measure the changes in the skin conductance, usually to indicate an estimate of the level of biological stress [5]. Both PPG and GSR sensors can be used to indicate how stress affects the heart rate by a simultaneous analysis of their corresponding waveforms. 
+  
+  With regards to our proposed solution, a PPG sensor and a GSR sensor are interfacing with a 3.3/5 volts Arduino microcontroller to acquire the required signals. The GSR sensor is used for detecting the stress level, while the PPG sensor is used for estimating the heart rate. An Android (4.3+) application is developed to monitor the PPG and the GSR signals. The Arduino microcontroller interacts with the Android device through a wireless serial BLE connection. Standard algorithms for deriving parameters from PPG and GSR signals are available [6], [7]. These algorithms are adapted to the acquired signals, and converted into the Android application. The derived parameters can be used to help in finding a correlation between PPG and GSR signals. Appendix A at the end of this report contains details about the used algorithms.
   
   
 ##### Description
@@ -35,6 +37,37 @@ The following is a fourth-year engineering project at Carleton University, for t
   
   
 ##### Accomplishments
+  
+  The milestones of the project are as follows: 
+  
+    ● Requirements Elicitation and Analysis 
+        ○ Brainstorming ○ Researching and Reading
+        
+    ● System Design 
+        ○ Block Diagram 
+        ○ Circuit Diagram 
+        ○ UML Diagrams 
+        
+    ● Implementation and Development 
+        ○ Develop a working circuit using Arduino UNO, a PPG sensor, a GSR sensor, and a BLE module 
+        ○ Create an Arduino sketch/code(s) to link with the Arduino board 
+        ○ Adapt the Arduino sketch/code(s) to identify the on-board pins properly 
+            ■ Wiring code (in C) 
+        ○ Acquire PPG and GSR signals from the Arduino board 
+        ○ Write algorithms to process the acquired PPG and GSR signals 
+            ■ Processing code (in C) 
+        ○ Extract parameters from the PPG and GSR signals and analyse them to find any possible correlation between the signals 
+        ○ Create an Arduino sketch/code to send the acquired signals via BLE 
+        ○ Establish a BLE connection between Arduino and an Android device 
+            ■ Client-Server application (in Java) 
+        ○ Develop an Android application to monitor the acquired signals and extracted parameters 
+            ■ GUI (in XML) 
+            ■ Functionality (in Java) 
+        ○ Modify the application to invoke a notification for irregular heart rates  
+        ○ Add extra useful features to the application 
+        
+    ● Verification and Validation of the System 
+        ○ Test the system on human subjects
   
   The team was able to accomplish all of the proposed milestones. A working circuit consisting of an Arduino UNO microcontroller, a PPG sensor, a GSR sensor, and a BLE module was developed. The Graphical User Interface (GUI) of the Android application was developed, and the application’s functionalities were implemented. Also, both PPG and GSR signals were successfully displayed on the developed application. Application users would now be able to register multiple patients’ profiles, connect to the Arduino microcontroller, monitor the PPG and GSR signals, and share information with a selected emergency contact (preferably a doctor). Furthermore, the team performed an analysis on the acquired signals by extracting statistical parameters and conducting various experiments for the verification and validation of the product. 
   
