@@ -85,13 +85,13 @@ The following is a fourth-year engineering project at Carleton University, for t
 
   [3] S. C. Mukhopadhyay, “Wearable Sensors for Human Activity Monitoring: A Review,” in IEEE Sensors Journal, VOL. 15, NO. 3, March 2015. 
   
-  [4] M. C. Stöppler. Heart Disease and Stress [Online]. Available: http://www.medicinenet.com/stress_and_heart_disease/article.htm   
+  [4]  J. G. Webster and J. W. Clark, et al. (eds.), Medical instrumentation: application and design, 4th ed. Hoboken, NJ: John Wiley & Sons, 2010. 
   
-  [5] J. Tozzi, 2014. How Much Do Medical Devices Cost? Doctors Have No Idea [Online]. Available: http://www.bloomberg.com/news/articles/2014-01-23/how-much-do-medical-devices-cost-doctors-have-no-idea  
+  [5] M. V. Villarejo, et al. (eds.), “A Stress Sensor Based on Galvanic Skin Response (GSR) Controlled by ZigBee,” in Sensors Journal, 2012, 6075-6101.  
   
-  [6] J. G. Webster and J. W. Clark, et al. (eds.), Medical instrumentation: application and design, 4th ed. Hoboken, NJ: John Wiley & Sons, 2010. 
+  [6] Biopac, “Heart Rate Variability,” in Application Note 129 [Online]. Available: https://www.biopac.com/wp-content/uploads/app129.pdf. 
   
-  [7] M. V. Villarejo, et al. (eds.), “A Stress Sensor Based on Galvanic Skin Response (GSR) Controlled by ZigBee,” in Sensors Journal, 2012, 6075-6101.
+  [7]  J. H.D.M. Westerink, et al. (eds.), “Computing Emotion Awareness through Galvanic Skin Response and Facial Electrography,” in Probing Experience, 149-162  [Online]. Available: http://eprints.eemcs.utwente.nl/20853/01/Westerink08-Computing_emotional_awareness.pdf  
   
   [8] K. Skaarhoj, 2015. Stroke - The global burden of stroke [Online]. Available: http://www.world-heartfederation.org/cardiovascular-health/stroke/.  
   
