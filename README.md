@@ -24,12 +24,12 @@ The following is a fourth-year engineering project at Carleton University, for t
  
   Recent studies have shown that changes in the levels of biological stress influence the heart rate [4]. In fact, the pumping process of the heart and in turn the blood flow throughout the body may be affected by changes in physiological stress [4]. One way to measure the heart rate of a person is through analyzing a PPG signal. PPG is a procedure that determines the change in blood volume pulse (usually in the soft tissues of the body) using the direct relationship between variations in volume and the absorption, reflection, and scattering of the light from a photo-emitter and then recorded by the photo-receptor [4]. The changes in the pulsatile flow of the arterial blood are then represented in a PPG waveform, which can then be used to extract useful information such as a person’s heart rate. The modern way of estimating physiological stress is through the changes in skin conductance. GSR is a technique used to measure the changes in the skin conductance, usually to indicate an estimate of the level of biological stress [5]. Both PPG and GSR sensors can be used to indicate how stress affects the heart rate by a simultaneous analysis of their corresponding waveforms. 
   
-  With regards to our proposed solution, a PPG sensor and a GSR sensor are interfacing with a 3.3/5 volts Arduino microcontroller to acquire the required signals. The GSR sensor is used for detecting the stress level, while the PPG sensor is used for estimating the heart rate. An Android (4.3+) application is developed to monitor the PPG and the GSR signals. The Arduino microcontroller interacts with the Android device through a wireless serial BLE connection. Standard algorithms for deriving parameters from PPG and GSR signals are available [6], [7]. These algorithms are adapted to the acquired signals, and converted into the Android application. The derived parameters can be used to help in finding a correlation between PPG and GSR signals. Appendix A at the end of this report contains details about the used algorithms.
+  With regards to our proposed solution, a PPG sensor and a GSR sensor are interfacing with a 3.3/5 volts Arduino microcontroller to acquire the required signals. The GSR sensor is used for detecting the stress level, while the PPG sensor is used for estimating the heart rate. An Android (4.3+) application is developed to monitor the PPG and the GSR signals. The Arduino microcontroller interacts with the Android device through a wireless serial BLE connection. Standard algorithms for deriving parameters from PPG and GSR signals are available [6], [7]. These algorithms are adapted to the acquired signals, and converted into the Android application. The derived parameters can be used to help in finding a correlation between PPG and GSR signals. 
   
   
 ##### Description
 
-  The project is divided into two parts, the Arduino circuitry and the Android application. Hence, the system consists of two subsystems; the first subsystem is composed of an Arduino microcontroller and two sensors (i.e. PPG and GSR sensors), while the second subsystem is composed of an Android monitoring application. Generally speaking, all signal acquisition will be done within the Arduino microcontroller subsystem. Android (4.3+) is the platform used to develop the application, while the Android device is simply a receiver and a sender. It receives the PPG and GSR sensor readings along with the heart rate as it sends the start/stop command for the acquisition of each signal to the Arduino microcontroller. The Android application then plots the corresponding waveforms, and processes them to extract related parameters. The inter-communication between the Arduino microcontroller and the Android device is established through a BLE connection. Figure 3 below shows a higher level diagram of the system.
+  The project is divided into two parts, the Arduino circuitry and the Android application. Hence, the system consists of two subsystems; the first subsystem is composed of an Arduino microcontroller and two sensors (i.e. PPG and GSR sensors), while the second subsystem is composed of an Android monitoring application. Generally speaking, all signal acquisition will be done within the Arduino microcontroller subsystem. Android (4.3+) is the platform used to develop the application, while the Android device is simply a receiver and a sender. It receives the PPG and GSR sensor readings along with the heart rate as it sends the start/stop command for the acquisition of each signal to the Arduino microcontroller. The Android application then plots the corresponding waveforms, and processes them to extract related parameters. The inter-communication between the Arduino microcontroller and the Android device is established through a BLE connection. The figure below shows a higher level diagram of the system.
   
   ![alt tag](https://github.com/Itaf/4th-YearEngProject/blob/master/TheBigPicture.png)
   
@@ -52,17 +52,17 @@ The following is a fourth-year engineering project at Carleton University, for t
         ○ Develop a working circuit using Arduino UNO, a PPG sensor, a GSR sensor, and a BLE module 
         ○ Create an Arduino sketch/code(s) to link with the Arduino board 
         ○ Adapt the Arduino sketch/code(s) to identify the on-board pins properly 
-            ■ Wiring code (in C) 
+             ■ Wiring code (in C) 
         ○ Acquire PPG and GSR signals from the Arduino board 
         ○ Write algorithms to process the acquired PPG and GSR signals 
-            ■ Processing code (in C) 
+             ■ Processing code (in C) 
         ○ Extract parameters from the PPG and GSR signals and analyse them to find any possible correlation between the signals 
         ○ Create an Arduino sketch/code to send the acquired signals via BLE 
         ○ Establish a BLE connection between Arduino and an Android device 
-            ■ Client-Server application (in Java) 
+             ■ Client-Server application (in Java) 
         ○ Develop an Android application to monitor the acquired signals and extracted parameters 
-            ■ GUI (in XML) 
-            ■ Functionality (in Java) 
+             ■ GUI (in XML) 
+             ■ Functionality (in Java) 
         ○ Modify the application to invoke a notification for irregular heart rates  
         ○ Add extra useful features to the application 
         
